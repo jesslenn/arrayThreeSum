@@ -113,7 +113,8 @@ function arrayThreeSum (arr, targetSum) {
   arr.sort((a, b) => a-b)
   //initialize our return array
   let solution = [];
-  //We're going to loop through the array--if we know we'll be initializing a pointer at the end of the array, then we know we don't need to check the element at length-1 because our end pointer will catch it.  So i only has to go to length-2
+  //We're going to loop through the array--if we know we'll be initializing a pointer at the end of the array, 
+  //then we know we don't need to check the element at length-1 because our end pointer will catch it.  So i only has to go to length-2
   for (let i = 0; i < arr.length-2; i++) {
     //first pointer
     let element = arr[i];
@@ -131,7 +132,7 @@ function arrayThreeSum (arr, targetSum) {
       if (currentSum === targetSum){
         //push all current integers into our solution array
         solution.push([element, arr[leftIndex], arr[rightIndex]]);
-        //move each inside pointers toward each other
+        //move each of the inside pointers toward each other
         leftIndex++
         rightIndex--
       } else if (currentSum > targetSum) {
@@ -165,7 +166,7 @@ function arrayThreeSum (array, sum) {
         //we push integers at our locations in each loop, AND the remainder integer that we found in our memo
         solution.push(array[i], currentSum-array[j], array[j])
       } else {
-        //if we don't find our remainder in the memo, we'll add the value at j into our memo for use later in our loop(s)!
+        //if we don't find our remainder in the memo, we'll add the value at j into our memo for use later in our inside loop!
         memo[array[j] = true]
       }
     }
